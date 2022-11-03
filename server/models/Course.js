@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const courseSchem = mongoose.Schema({
+const courseSchema = mongoose.Schema({
     title: String,
     totalHours: String,
     hoursDone: String,
@@ -12,6 +12,6 @@ const courseSchem = mongoose.Schema({
 
 })
 
-const Course = mongoose.model('PostMeessage', courseSchem)
+const Course = mongoose.model('PostMeessage', courseSchema)
 
 export default Course 

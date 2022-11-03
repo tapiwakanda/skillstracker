@@ -1,10 +1,13 @@
 import React from "react";
+import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core'
 
 const App = () => {
     return (
-        <div>
-            <h1>Hey App</h1>
-        </div>
+        <Container maxWidth="lg">
+            <AppBar position="static" color="inherit">
+                <Typography variant="h4" align="center">Skills Tracker</Typography>
+            </AppBar>
+        </Container>
     );
 }
 
