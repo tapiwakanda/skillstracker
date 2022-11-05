@@ -40,3 +40,8 @@ export const signup = async (req, res) => {
         }
         return res.status(201).json({user})
 }
+
+const login = async (req, res) => {
+    const {staffCode, password} = req.body
+    
+}
