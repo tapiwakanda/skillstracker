@@ -41,7 +41,21 @@ export const signup = async (req, res) => {
         return res.status(201).json({user})
 }
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
+
     const {staffCode, password} = req.body
-    
+    let existingUser
+        try {
+            existingUser = await User.findOne({staffCode})
+        } catch (err) {
+            return console.log(err);
+        }
+        if(!existingUser){
+            return res.status(400).json({message: "Couldnt find a user by this staffcode"})
+        }
+    const isPasswordCorrect = bcrypt.compareSync(password,existingUser.password)
+    if (!isPasswordCorrect){
+        return res.status(400).json({message: "Incorrect Password"})
+    }
+    return res.status(200).json({message: "Login Successful"})
 }

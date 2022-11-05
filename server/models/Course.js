@@ -8,10 +8,15 @@ const courseSchema = mongoose.Schema({
     registeredAt: {
         type: Date,
         default: new Date()
+    },
+    user: {
+        type: String,
+        required: true
     }
+
 
 })
 
-const Course = mongoose.model('PostMeessage', courseSchema)
+const Course = mongoose.model('Course', courseSchema)
 
 export default Course 
