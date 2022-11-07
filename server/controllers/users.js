@@ -30,7 +30,8 @@ export const signup = async (req, res) => {
             fullName,
             email,
             staffCode,
-            password: hashedPassword
+            password: hashedPassword,
+            courses:[]
         })
         
         try {
@@ -59,3 +60,12 @@ export const login = async (req, res) => {
     }
     return res.status(200).json({message: "Login Successful"})
 }
+
+
+
+/* {
+    "fullName": "Tapiwanashe Chemist",
+    "email": "tkanda123@gmail.com",
+    "staffCode": "om473853",
+    "password": "password"
+} */

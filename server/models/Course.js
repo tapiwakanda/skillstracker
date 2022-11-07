@@ -10,7 +10,8 @@ const courseSchema = mongoose.Schema({
         default: new Date()
     },
     user: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref:"User",
         required: true
     }
 
